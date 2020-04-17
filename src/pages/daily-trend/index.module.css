@@ -1,0 +1,13 @@
+.trendCard {
+  padding: 20px;
+}
+
+.trendTable {
+  width: 100%;
+  max-height: calc(100vh - 150px);
+  overflow: auto;
+}
+
+.mainContent {
+  margin-top: 16px;
+}

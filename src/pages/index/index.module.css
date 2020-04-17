@@ -1,0 +1,43 @@
+.card {
+  padding: 20px;
+  text-align: center;
+  min-height: 131px;
+  display: flex;
+  justify-content: center;
+}
+
+.confirmCard {
+  border-bottom: 10px solid rgba(0,0,255,.5);
+}
+
+.deathCard {
+  border-bottom: 10px solid rgba(255,0,0,.5);
+}
+
+.recoverdCard {
+  border-bottom: 10px solid rgba(0,255,0,.5);
+}
+
+.activeCard {
+  border-bottom: 10px solid rgba(247, 76, 49,.5);
+}
+
+.trendCard {
+  padding: 20px;
+}
+
+.charts {
+  margin-top: 24px;
+}
+
+.countryRow {
+  white-space: nowrap;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.countryRow > * {
+  padding: 0 10px;
+  vertical-align: middle;
+}

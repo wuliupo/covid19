@@ -1,0 +1,16 @@
+.breadcrumb > * {
+  font-size: 14px;
+  display: inline-block;
+  color: rgba(0, 0, 0, 0.87);
+}
+.breadcrumb a, .breadcrumb a:visited, .seperator {
+  color: rgba(0, 0, 0, 0.54);
+}
+
+.breadcrumb a:hover {
+  text-decoration: underline;
+}
+
+.seperator {
+  margin: 0 8px;
+}
