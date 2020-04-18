@@ -4,9 +4,7 @@ import App from './components/app';
 import { register } from './serviceWorker';
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <App />,
   document.getElementById('root'),
 );
 
