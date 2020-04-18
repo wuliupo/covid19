@@ -14,7 +14,7 @@ function useOverallData(config: ConfigInterface = {}) {
 }
 
 function useConfirmData(config: ConfigInterface = {}) {
-  return useSWR('/api/confirm', fetcher, { suspense: true, ...config });
+  return useSWR('/api/confirmed', fetcher, { suspense: true, ...config });
 }
 
 function useConfirmedDataByCountry() {
