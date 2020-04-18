@@ -24,8 +24,10 @@
     "swr": "^0.2.0"
   },
   "scripts": {
+    "predeploy": "yarn build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
-    "build": "yarn lint && NODE_ENV=production react-scripts build",
+    "build": "yarn lint && NODE_ENV=production PUBLIC_URL=/covid19 react-scripts build",
     "lint": "eslint --ext .js,.jsx,.ts,.tsx ./src",
     "lintfix": "eslint --fix --ext .js,.jsx,.ts,.tsx ./src"
   },

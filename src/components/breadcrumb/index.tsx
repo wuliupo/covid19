@@ -16,7 +16,7 @@ const Breadcrumb: React.FC<{}> = ({ children }) => {
           // eslint-disable-next-line
           acc = acc.concat(
             current,
-            <span className={styles.seperator}>/</span>,
+            <span className={styles.seperator} key={current.props.children}> / </span>,
           );
         } else {
           acc.push(current);
