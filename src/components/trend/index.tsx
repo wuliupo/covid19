@@ -1,15 +1,14 @@
 import React from 'react';
 import Measure from 'react-measure';
 import { Chart } from '@antv/g2';
-import useSWR from 'swr';
-import fetcher from '../../utils/fetch';
+import { useDailyData } from '../../hooks/data';
 
 const container = 'trend-chart';
 
 const Trend: React.FC<{ height?: number }> = ({ height }) => {
   const [width, setWidth] = React.useState<number>();
   const [hasRendered, setHasRendered] = React.useState(false);
-  const { data: dailyData } = useSWR('/api/daily', fetcher, { suspense: true });
+  const { data: dailyData } = useDailyData();
   React.useEffect(() => {
     if (!dailyData || !width || hasRendered) {
       return;

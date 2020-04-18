@@ -11,11 +11,11 @@ import {
 import { Button } from '@rmwc/button';
 import { Link } from 'react-router-dom';
 import styles from './index.module.css';
-import useConfirmedDataByCountry from '../../hooks/data';
+import { useConfirmedDataByCountry } from '../../hooks/data';
 import Breadcrumb from '../../components/breadcrumb';
 
 const Countries: React.FC<{}> = () => {
-  const data = useConfirmedDataByCountry();
+  const { data } = useConfirmedDataByCountry();
 
   return (
     <div className={styles.pageWrapper}>

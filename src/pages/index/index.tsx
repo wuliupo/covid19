@@ -1,16 +1,14 @@
 import React from 'react';
 import { CardPrimaryAction, Card } from '@rmwc/card';
 import { GridCell, Grid, GridRow } from '@rmwc/grid';
-import useSWR from 'swr';
 import { Typography } from '@rmwc/typography';
 import CountUp from 'react-countup';
 import classnames from 'classnames';
 import { Link } from 'react-router-dom';
 import styles from './index.module.css';
-import fetcher from '../../utils/fetch';
 import Trend from '../../components/trend';
 import WorldTrend from '../../components/world-trend';
-import useConfirmedDataByCountry from '../../hooks/data';
+import { useConfirmedDataByCountry, useDailyData, useOverallData } from '../../hooks/data';
 
 function getDeltaSign(delta: number) {
   return delta >= 0 ? '+' : '-';
@@ -21,9 +19,9 @@ function getDeltaSign(delta: number) {
 // }
 
 const Index: React.FC<{}> = () => {
-  const { data: recoveryData } = useSWR('/api', fetcher, { suspense: true });
-  const { data: dailyData } = useSWR('/api/daily', fetcher, { suspense: true });
-  const countryData = useConfirmedDataByCountry();
+  const { data: recoveryData } = useOverallData();
+  const { data: dailyData } = useDailyData();
+  const { data: countryData } = useConfirmedDataByCountry();
 
   const currentDateData = dailyData?.[dailyData?.length - 1];
 

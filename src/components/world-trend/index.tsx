@@ -2,16 +2,15 @@ import React from 'react';
 import { Chart } from '@antv/g2';
 import Measure from 'react-measure';
 import DataSet from '@antv/data-set';
-import useSWR from 'swr';
 import mapData from '../../countries.geo.json';
-import fetcher from '../../utils/fetch';
+import { useConfirmData } from '../../hooks/data';
 
 const container = 'world-trend-chart';
 
 const WorldTrend: React.FC<{}> = () => {
   const [width, setWidth] = React.useState<number>();
   const [hasRendered, setHasRendered] = React.useState(false);
-  const { data: confirmedData } = useSWR('/api/confirmed', fetcher, { suspense: true });
+  const { data: confirmedData } = useConfirmData();
 
   React.useEffect(() => {
     if (!confirmedData || !width || hasRendered) {

@@ -10,17 +10,16 @@ import {
   DataTableCell,
   DataTableBody,
 } from '@rmwc/data-table';
-import useSWR from 'swr';
 import moment from 'moment';
 import { Link } from 'react-router-dom';
 import { Button } from '@rmwc/button';
 import styles from './index.module.css';
 import Trend from '../../components/trend';
-import fetcher from '../../utils/fetch';
 import Breadcrumb from '../../components/breadcrumb';
+import { useDailyData } from '../../hooks/data';
 
 const DailyTrend: React.FC<{}> = () => {
-  const { data: dailyData } = useSWR('/api/daily', fetcher, { suspense: true });
+  const { data: dailyData } = useDailyData();
 
   return (
     <Grid>
