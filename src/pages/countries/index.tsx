@@ -19,7 +19,10 @@ const Countries: React.FC<{}> = () => {
 
   return (
     <div className={styles.pageWrapper}>
-      <Breadcrumb><span>Stats By Countries</span></Breadcrumb>
+      <Breadcrumb>
+        <Link to="/">Home</Link>
+        <span>Stats By Country</span>
+      </Breadcrumb>
       <DataTable stickyColumns={1} stickyRows={1} className={styles.countryTable}>
         <DataTableContent>
           <DataTableHead>
@@ -36,21 +39,21 @@ const Countries: React.FC<{}> = () => {
               data.map(({
                 country, confirmed, recovered, deaths, active, iso3, iso2,
               }) => (
-                  <DataTableRow key={country}>
-                    <DataTableCell className={styles.countryCell}>
-                      <Link to={`/countries/${iso3}`}>
-                        <img className={styles.countryFlag} src={`https://www.countryflags.io/${iso2}/flat/16.png`} alt="" />
-                        <Button dense>
-                          {country}
-                        </Button>
-                      </Link>
-                    </DataTableCell>
-                    <DataTableCell isNumeric>{confirmed.toLocaleString()}</DataTableCell>
-                    <DataTableCell isNumeric>{recovered.toLocaleString()}</DataTableCell>
-                    <DataTableCell isNumeric>{deaths.toLocaleString()}</DataTableCell>
-                    <DataTableCell isNumeric>{active.toLocaleString()}</DataTableCell>
-                  </DataTableRow>
-                ))
+                <DataTableRow key={country}>
+                  <DataTableCell className={styles.countryCell}>
+                    <Link to={`/countries/${iso3}`}>
+                      <img className={styles.countryFlag} src={`https://www.countryflags.io/${iso2}/flat/16.png`} alt="" />
+                      <Button dense>
+                        {country}
+                      </Button>
+                    </Link>
+                  </DataTableCell>
+                  <DataTableCell isNumeric>{confirmed.toLocaleString()}</DataTableCell>
+                  <DataTableCell isNumeric>{recovered.toLocaleString()}</DataTableCell>
+                  <DataTableCell isNumeric>{deaths.toLocaleString()}</DataTableCell>
+                  <DataTableCell isNumeric>{active.toLocaleString()}</DataTableCell>
+                </DataTableRow>
+              ))
             }
           </DataTableBody>
         </DataTableContent>

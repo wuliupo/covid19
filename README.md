@@ -1,11 +1,12 @@
 # Covid-19 Live Stats
 
-You can view the demo from [covid-19-96424.web.app/](https://covid-19-96424.web.app/).
+You can view the demo at [covid-19-96424.web.app/](https://covid-19-96424.web.app/).
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## libraries/technology we use
+## libraries/technologies we use
 
+- pwa
 - typescript
 - react/react-dom
 - react-router

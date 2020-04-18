@@ -8,7 +8,8 @@ const Country: React.FC<{}> = () => {
   return (
     <div className={styles.pageWrapper}>
       <Breadcrumb>
-        <Link to="/countries">Stats By Countries</Link>
+        <Link to="/">Home</Link>
+        <Link to="/countries">Stats By Country</Link>
         <span>{match.params.country}</span>
       </Breadcrumb>
       Coming Soon

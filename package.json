@@ -25,16 +25,18 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
-    "lint": "eslint --fix --ext .js,.jsx,.ts,.tsx ./src"
+    "build": "yarn lint && NODE_ENV=production react-scripts build",
+    "lint": "eslint --ext .js,.jsx,.ts,.tsx ./src",
+    "lintfix": "eslint --fix --ext .js,.jsx,.ts,.tsx ./src"
   },
   "eslintConfig": {
     "extends": [
       "react-app",
-      "airbnb-typescript/base"
+      "airbnb-typescript"
     ],
     "rules": {
-      "import/extensions": 0
+      "import/extensions": 0,
+      "react/prop-types": 0
     },
     "parserOptions": {
       "project": "./tsconfig.json"

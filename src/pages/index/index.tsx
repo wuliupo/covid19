@@ -111,52 +111,52 @@ const Index: React.FC<{}> = () => {
           countryData.slice(0, 9).map(({
             country, confirmed, deaths, recovered, iso3, iso2,
           }) => (
-              <GridCell span={2} key={country}>
-                <Card className={styles.card}>
-                  <CardPrimaryAction>
-                    <Link to={`/countries/${iso3}`}>
-                      <Typography use="subtitle1" className={styles.countryRow} tag="div">
-                        <img src={`https://www.countryflags.io/${iso2}/flat/16.png`} alt={country} />
-                        {country}
+            <GridCell span={2} key={country}>
+              <Card className={styles.card}>
+                <CardPrimaryAction>
+                  <Link to={`/countries/${iso3}`}>
+                    <Typography use="subtitle1" className={styles.countryRow} tag="div">
+                      <img src={`https://www.countryflags.io/${iso2}/flat/16.png`} alt={country} />
+                      {country}
+                    </Typography>
+                    <Typography use="body2" tag="div">
+                      <Typography use="caption" tag="span">
+                        confirmed:&nbsp;
                       </Typography>
-                      <Typography use="body2" tag="div">
-                        <Typography use="caption" tag="span">
-                          confirmed:&nbsp;
-                        </Typography>
-                        <CountUp
-                          start={0}
-                          end={confirmed}
-                          duration={2.75}
-                          separator=","
-                        />
+                      <CountUp
+                        start={0}
+                        end={confirmed}
+                        duration={2.75}
+                        separator=","
+                      />
+                    </Typography>
+                    <Typography use="body2" tag="div">
+                      <Typography use="caption" tag="span">
+                        deaths:&nbsp;
                       </Typography>
-                      <Typography use="body2" tag="div">
-                        <Typography use="caption" tag="span">
-                          deaths:&nbsp;
-                        </Typography>
-                        <CountUp
-                          start={0}
-                          end={deaths}
-                          duration={2.75}
-                          separator=","
-                        />
+                      <CountUp
+                        start={0}
+                        end={deaths}
+                        duration={2.75}
+                        separator=","
+                      />
+                    </Typography>
+                    <Typography use="body2" tag="div">
+                      <Typography use="caption" tag="span">
+                        recovered:&nbsp;
                       </Typography>
-                      <Typography use="body2" tag="div">
-                        <Typography use="caption" tag="span">
-                          recovered:&nbsp;
-                        </Typography>
-                        <CountUp
-                          start={0}
-                          end={recovered}
-                          duration={2.75}
-                          separator=","
-                        />
-                      </Typography>
-                    </Link>
-                  </CardPrimaryAction>
-                </Card>
-              </GridCell>
-            ))
+                      <CountUp
+                        start={0}
+                        end={recovered}
+                        duration={2.75}
+                        separator=","
+                      />
+                    </Typography>
+                  </Link>
+                </CardPrimaryAction>
+              </Card>
+            </GridCell>
+          ))
         }
         <GridCell span={2}>
           <Card className={styles.card}>

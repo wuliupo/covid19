@@ -27,6 +27,7 @@ const DailyTrend: React.FC<{}> = () => {
       <GridRow>
         <GridCell span={12}>
           <Breadcrumb>
+            <Link to="/">Home</Link>
             <span>Daily Trend</span>
           </Breadcrumb>
         </GridCell>
@@ -45,20 +46,23 @@ const DailyTrend: React.FC<{}> = () => {
               </DataTableHead>
               <DataTableBody>
                 {
-                  dailyData.sort((a: any, b: any) => moment(b.reportDate).toDate().valueOf() - moment(a.reportDate).toDate().valueOf()).map(({
+                  dailyData.sort(
+                    (a: any, b: any) => moment(b.reportDate).toDate().valueOf()
+                      - moment(a.reportDate).toDate().valueOf(),
+                  ).map(({
                     reportDate, deltaConfirmed, deaths, totalConfirmed,
                   }: any) => (
-                      <DataTableRow key={reportDate}>
-                        <DataTableCell>
-                          <Link to={`/daily-trend/${reportDate}`}>
-                            <Button dense>{reportDate}</Button>
-                          </Link>
-                        </DataTableCell>
-                        <DataTableCell isNumeric>{totalConfirmed?.toLocaleString()}</DataTableCell>
-                        <DataTableCell isNumeric>{deltaConfirmed?.toLocaleString()}</DataTableCell>
-                        <DataTableCell isNumeric>{deaths?.total?.toLocaleString()}</DataTableCell>
-                      </DataTableRow>
-                    ))
+                    <DataTableRow key={reportDate}>
+                      <DataTableCell>
+                        <Link to={`/daily-trend/${reportDate}`}>
+                          <Button dense>{reportDate}</Button>
+                        </Link>
+                      </DataTableCell>
+                      <DataTableCell isNumeric>{totalConfirmed?.toLocaleString()}</DataTableCell>
+                      <DataTableCell isNumeric>{deltaConfirmed?.toLocaleString()}</DataTableCell>
+                      <DataTableCell isNumeric>{deaths?.total?.toLocaleString()}</DataTableCell>
+                    </DataTableRow>
+                  ))
                 }
               </DataTableBody>
             </DataTableContent>

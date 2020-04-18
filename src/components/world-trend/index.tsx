@@ -97,12 +97,14 @@ const WorldTrend: React.FC<{}> = () => {
   }, [confirmedData, width, hasRendered]);
 
   return (
-    <Measure bounds
+    <Measure
+      bounds
       onResize={(contentRect) => {
         if (contentRect.bounds) {
           setWidth(contentRect.bounds.width);
         }
-      }}>
+      }}
+    >
       {({ measureRef }) => (
         <div ref={measureRef} id={container} />
       )}

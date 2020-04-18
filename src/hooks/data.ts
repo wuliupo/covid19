@@ -19,7 +19,14 @@ function useConfirmedDataByCountry() {
       const active = sum(list.map((data) => data.active));
 
       return {
-        country, list, confirmed, recovered, deaths, active, iso3: list?.[0]?.iso3, iso2: list?.[0]?.iso2,
+        country,
+        list,
+        confirmed,
+        recovered,
+        deaths,
+        active,
+        iso3: list?.[0]?.iso3,
+        iso2: list?.[0]?.iso2,
       };
     });
   }, [confirmedData]);

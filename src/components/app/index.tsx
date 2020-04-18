@@ -21,12 +21,16 @@ function App() {
       <>
         <SimpleTopAppBar
           title={
-            <img className={styles.icon} src={icon} alt="icon" /> as any
+            (
+              <Link to="/">
+                <img className={styles.icon} src={icon} alt="icon" />
+              </Link>
+            ) as any
           }
           startContent={(
             <Grid align="left">
               <GridRow>
-                <GridCell phone={2}><Link className={styles.link} to="/">Dashboard</Link></GridCell>
+                <GridCell phone={2}><Link className={styles.link} to="/countries">Countries</Link></GridCell>
                 <GridCell phone={2}><Link className={styles.link} to="/daily-trend">Daily Trend</Link></GridCell>
               </GridRow>
             </Grid>
@@ -38,7 +42,8 @@ function App() {
             <div className={styles.spinnerWrapper}>
               <CircularProgress size="large" />
             </div>
-          )}>
+          )}
+          >
             <Switch>
               {
                 routes.map((props) => (
@@ -51,7 +56,7 @@ function App() {
           </React.Suspense>
         </div>
       </>
-    </BrowserRouter >
+    </BrowserRouter>
   );
 }
 
